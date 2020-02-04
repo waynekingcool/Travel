@@ -6,6 +6,7 @@
 </template>
 
 <script>
+//导入组件
 import HomeHeader from './components/Header'
 export default {
     name:"Home",
