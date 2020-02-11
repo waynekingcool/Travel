@@ -2,13 +2,13 @@
     <div>
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom">
+            <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
                 <div class="item-img-wrapper">
-                    <img src="https://imgs.qunarzz.com/p/p66/201304/17/384810d022dd28f793835fbb.jpg_216x190_9cdf9f18.jpg" alt="" class="item-img">
+                    <img :src="item.imgUrl" alt="" class="item-img">
                 </div>
                 <div class="item-info">
-                    <p class="item-title">三亚游泳池</p>
-                    <p class="item-desc">啊好大的游泳池啊</p>
+                    <p class="item-title">{{item.title}}</p>
+                    <p class="item-desc">{{item.desc}}</p>
                     <button class="item-button">查看详情</button>
                 </div>
             </li>
@@ -18,7 +18,10 @@
 
 <script>
 export default {
-    name:"HomeRecommend"
+    name:"HomeRecommend",
+    props:{
+        recommendList:Array
+    }
 }
 </script>
 

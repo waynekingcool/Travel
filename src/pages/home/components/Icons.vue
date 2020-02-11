@@ -1,10 +1,10 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
                     <div class="icon-img">
-                        <img class="icon-imgcontent" :src="item.imgUrl" alt="">
+                        <img class="icon-img-content" :src="item.imgUrl" alt="">
                     </div>
                     <p class="icon-desc">{{item.desc}}</p>
                 </div>
@@ -16,47 +16,14 @@
 <script>
 export default {
     name:"HomeIcons",
+    props:{
+        iconList:Array
+    },
     data:function(){
         return {
-            iconList:[
-                {
-                    id:'0001',
-                    imgUrl: 'https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png',
-                    desc:'海外酒店海外酒店海外酒店海外酒店'
-                },{
-                    id:'0002',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'动物园'
-                },{
-                    id:'0003',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑3'
-                },{
-                    id:'0004',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑4'
-                },{
-                    id:'0005',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'动物园5'
-                },{
-                    id:'0006',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑6'
-                },{
-                    id:'0007',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑7'
-                },{
-                    id:'0008',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑8'
-                },{
-                    id:'0009',
-                    imgUrl:"https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png",
-                    desc:'拉拉黑9'
-                }
-            ]
+            swiperOption:{
+                autoplay:false
+            }
         }
     },
     computed:{

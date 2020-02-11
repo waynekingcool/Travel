@@ -7,14 +7,17 @@
             <span class="iconfont">&#xe600;</span>&nbsp;搜索内容
         </div>
         <div class="header-right">
-            <span class="iconfont arrow-icon">南昌&#xe64a;</span>
+            <span class="iconfont arrow-icon">{{this.city}}&#xe64a;</span>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name:"Header"
+    name:"Header",
+    props:{
+        city:String
+    }
 }
 </script>
 
