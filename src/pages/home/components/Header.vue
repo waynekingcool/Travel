@@ -6,9 +6,11 @@
         <div class="header-input">
             <span class="iconfont">&#xe600;</span>&nbsp;搜索内容
         </div>
-        <div class="header-right">
-            <span class="iconfont arrow-icon">{{this.city}}&#xe64a;</span>
-        </div>
+        <router-link to="/city">
+            <div class="header-right">
+                <span class="iconfont arrow-icon">{{this.city}}&#xe64a;</span>
+            </div>
+        </router-link>
     </div>
 </template>
 
