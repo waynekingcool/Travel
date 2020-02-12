@@ -13,75 +13,19 @@
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                        <div class="button">南昌</div>
-                    </div>
-                <div class="button-wrapper">
-                        <div class="button">南昌</div>
-                    </div>
-                <div class="button-wrapper">
-                        <div class="button">南昌</div>
-                    </div>
-                <div class="button-wrapper">
-                        <div class="button">南昌</div>
+                    <div class="button-wrapper" v-for="item of hotCities" :key="item.id">
+                        <div class="button">{{item.name}}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">啊啊啊</div>
-                    <div class="item border-bottom">哦哦哦</div>
-                    <div class="item border-bottom">饿饿饿</div>
-                    <div class="item border-bottom">热热热</div>
-                    <div class="item border-bottom">通天塔</div>
+            <div class="area" v-for="(item,key) of cities" :key="key">
+                <div class="title border-topbottom">{{key}}</div>
+                <div class="item-list" v-for="city of item" :key="city.id">
+                    <div class="item border-bottom">{{city.name}}</div>
                 </div>
             </div>
 
-                    <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">啊啊啊</div>
-                    <div class="item border-bottom">哦哦哦</div>
-                    <div class="item border-bottom">饿饿饿</div>
-                    <div class="item border-bottom">热热热</div>
-                    <div class="item border-bottom">通天塔</div>
-                </div>
-            </div>
-
-                    <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">啊啊啊</div>
-                    <div class="item border-bottom">哦哦哦</div>
-                    <div class="item border-bottom">饿饿饿</div>
-                    <div class="item border-bottom">热热热</div>
-                    <div class="item border-bottom">通天塔</div>
-                </div>
-            </div>
-
-                    <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">啊啊啊</div>
-                    <div class="item border-bottom">哦哦哦</div>
-                    <div class="item border-bottom">饿饿饿</div>
-                    <div class="item border-bottom">热热热</div>
-                    <div class="item border-bottom">通天塔</div>
-                </div>
-            </div>
-
-                    <div class="area">
-                <div class="title border-topbottom">A</div>
-                <div class="item-list">
-                    <div class="item border-bottom">啊啊啊</div>
-                    <div class="item border-bottom">哦哦哦</div>
-                    <div class="item border-bottom">饿饿饿</div>
-                    <div class="item border-bottom">热热热</div>
-                    <div class="item border-bottom">通天塔</div>
-                </div>
-            </div>
         </div>
     </div>
 </template>
@@ -94,6 +38,10 @@ export default {
     mounted(){
         //设置scroll
         this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    props:{
+        cities:Object,
+        hotCities:Array
     }
 }
 </script>
