@@ -5,8 +5,13 @@
 </template>
 
 <script>
+import {name} from './wbtest.js'
 export default {
-    name: "Test"
+    name: "Test",
+    created:function(){
+        console.log('xxx')
+        console.log(name)
+    }
 }
 </script>
 
